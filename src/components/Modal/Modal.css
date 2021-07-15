@@ -1,0 +1,113 @@
+.Backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: hsla(0, 0%, 0%, 0.6);
+  backdrop-filter: blur(6px);
+}
+
+.Backdrop,
+.Dialog {
+  opacity: 0;
+  transition: opacity var(--x-pp-duration-slow) var(--x-pp-timing-base);
+
+  &.transitionEntered {
+    opacity: 1;
+  }
+}
+
+.Modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1001;
+  display: flex;
+  overflow: auto;
+  padding: var(--x-pp-spacing-loose4x);
+
+  @media screen and (max-width: 1000px) {
+    padding: 0;
+  }
+}
+
+.Dialog {
+  --x-pp-default-color: var(--x-pp-color-surface-primary);
+  --x-pp-default-color-subdued: var(--x-pp-color-surface-primary-subdued);
+  --x-pp-default-color-border: var(--x-pp-color-surface-primary-border);
+  --x-pp-default-color-border-emphasized: var(
+    --x-pp-color-surface-primary-border-emphasized
+  );
+  --x-pp-default-color-text: var(--x-pp-color-surface-primary-text);
+  --x-pp-default-color-text-subdued: var(
+    --x-pp-color-surface-primary-text-subdued
+  );
+  --x-pp-default-color-text-emphasized: var(
+    --x-pp-color-surface-primary-text-emphasized
+  );
+  --x-pp-default-color-accent: var(--x-pp-color-surface-primary-accent);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: var(--x-pp-modal-max-width);
+  margin: auto;
+  border-radius: var(--x-pp-border-radius-base);
+  overflow: hidden;
+  box-shadow: 0 5px 30px hsla(0, 0%, 0%, 0.2);
+  background-color: var(--x-pp-color-surface-primary);
+  color: var(--x-pp-color-surface-primary-text);
+
+  @media screen and (max-width: 1000px) {
+    max-width: 100% !important; /* stylelint-disable-line declaration-no-important */
+    height: 100%;
+    border-radius: 0;
+
+    & .Content {
+      flex: 1;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+}
+
+.Dialog-blockSizeFill {
+  height: 100%;
+
+  & .IFrame {
+    flex: 1;
+  }
+}
+
+.IFrame {
+  display: block;
+  border: none;
+  margin: var(--x-pp-spacing-base);
+
+  @media screen and (max-width: 1000px) {
+    margin: var(--x-pp-spacing-base) var(--x-pp-spacing-loose2x);
+  }
+}
+
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--x-pp-spacing-base);
+  border-block-end: 1px solid var(--x-pp-default-color-border);
+
+  @media screen and (max-width: 1000px) {
+    padding: var(--x-pp-spacing-base) var(--x-pp-spacing-loose2x);
+  }
+}
+
+.Content {
+  padding: var(--x-pp-spacing-base);
+  overflow: auto;
+
+  @media screen and (max-width: 1000px) {
+    padding: var(--x-pp-spacing-loose2x);
+  }
+}
+
+.CloseButton {
+  display: block;
+  padding: var(--x-pp-spacing-tight1x);
+  margin: calc(var(--x-pp-spacing-tight1x) * -1);
+}

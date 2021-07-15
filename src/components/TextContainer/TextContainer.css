@@ -1,0 +1,29 @@
+.TextContainer {
+  & > * + * {
+    margin-top: var(--x-pp-spacing-base);
+  }
+}
+
+.spacingNone > * + * {
+  margin-top: 0;
+}
+
+.spacingTight > * + * {
+  margin-top: var(--x-pp-spacing-tight2x);
+}
+
+.spacingLoose > * + * {
+  margin-top: var(--x-pp-spacing-loose2x);
+}
+
+.alignmentLeading {
+  text-align: start;
+}
+
+.alignmentCenter {
+  text-align: center;
+}
+
+.alignmentTrailing {
+  text-align: end;
+}

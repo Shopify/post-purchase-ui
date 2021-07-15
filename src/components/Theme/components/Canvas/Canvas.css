@@ -1,0 +1,22 @@
+.Canvas {
+  --x-pp-default-color-subdued: var(--x-pp-color-canvas-subdued);
+  --x-pp-default-color-text: var(--x-pp-color-canvas-text);
+  --x-pp-default-color-text-subdued: var(--x-pp-color-canvas-text-subdued);
+  --x-pp-default-color-text-emphasized: var(
+    --x-pp-color-canvas-text-emphasized
+  );
+  --x-pp-default-color-border: var(--x-pp-color-canvas-border);
+  --x-pp-default-color-border-emphasized: var(
+    --x-pp-color-canvas-border-emphasized
+  );
+  --x-pp-default-color-accent: var(--x-pp-color-canvas-accent);
+  --x-pp-default-color-disabled: var(--x-pp-color-canvas-disabled);
+  background: var(--x-pp-color-canvas);
+  color: var(--x-pp-default-color-text);
+  font-size: var(--x-pp-typography-size-default);
+  font-family: var(--x-pp-typography-primary-fonts);
+  font-weight: var(--x-pp-typography-primary-weight-base);
+  line-height: var(--x-pp-global-typography-line-size-default);
+  text-transform: var(--x-pp-global-typography-letter-case);
+  touch-action: manipulation;
+}

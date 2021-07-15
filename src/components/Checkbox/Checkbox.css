@@ -1,0 +1,172 @@
+.Wrapper {
+  display: grid;
+  justify-content: start;
+  align-items: start;
+
+  /*
+    We’d naturally use `gap: var(--x-pp-spacing-tight1x)`, but Autoprefixer
+    has an issue where it won’t transform both the grid and custom property
+    syntax. This leaves custom properties in the fallback grid declaration,
+    which causes it to be ignored. Once this issue is fixed:
+    https://github.com/csstools/postcss-preset-env/issues/180
+    we will be able to use the gap property as expected.
+  */
+  grid-template: 'checkbox gap label' auto / auto var(--x-pp-spacing-tight1x) auto;
+}
+
+.hasError {
+  grid-template:
+    'checkbox gap label' auto
+    'row-gap row-gap row-gap' var(--x-pp-spacing-tight1x)
+    'error error error' auto /
+    auto var(--x-pp-spacing-tight1x) auto;
+
+  &.errorIndentationToText {
+    grid-template:
+      'checkbox gap label' auto
+      'row-gap row-gap row-gap' var(--x-pp-spacing-tight1x)
+      'error-gap error-gap error' auto /
+      auto var(--x-pp-spacing-tight1x) auto;
+  }
+}
+
+.Checkbox {
+  position: relative;
+  margin-top: -1px;
+  grid-area: checkbox;
+  width: var(--x-pp-checkbox-size);
+  height: var(--x-pp-checkbox-size);
+}
+
+.Input {
+  --input-border-color: var(--x-pp-default-color-border);
+  --input-border-radius: var(
+    --x-pp-checkbox-border-radius,
+    var(--x-pp-control-border-radius, var(--x-pp-global-border-radius))
+  );
+  background-clip: padding-box;
+  border: 1px transparent solid;
+  border-radius: var(--input-border-radius);
+  box-sizing: content-box;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 0 1px var(--input-border-color) inset;
+  transition: box-shadow var(--x-pp-duration-base) var(--x-pp-timing-ease-out);
+  outline: none;
+
+  &::before {
+    content: '';
+    display: block;
+    border-radius: calc(var(--input-border-radius) / 2);
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    box-shadow: 0 0 0 0 var(--x-pp-color-interactive-text) inset,
+      0 0 0 0 var(--x-pp-color-interactive-text);
+    opacity: 0.3;
+    transition: box-shadow var(--x-pp-duration-base) var(--x-pp-timing-ease-out);
+  }
+
+  &:focus,
+  &:active {
+    box-shadow: 0 0 0 1px var(--x-pp-color-interactive-text) inset;
+
+    &::before {
+      box-shadow: 0 0 0 em(1px) var(--x-pp-color-interactive-text) inset,
+        0 0 0 em(3px) var(--x-pp-color-interactive-text);
+    }
+  }
+
+  &:checked {
+    box-shadow: 0 0 0 em(10px) var(--x-pp-color-interactive-text) inset;
+
+    & + .Icon {
+      opacity: 1;
+    }
+  }
+
+  &.Input-hasError:not(:checked) {
+    box-shadow: 0 0 0 em(2px) var(--x-pp-color-critical-accent) inset;
+
+    /* stylelint-disable selector-max-class, selector-max-specificity */
+    &:focus::before,
+    &:active::before {
+      box-shadow: 0 0 0 em(1px) var(--x-pp-color-critical-accent) inset,
+        0 0 0 em(3px) var(--x-pp-color-critical-accent);
+    }
+    /* stylelint-enable selector-max-class, selector-max-specificity */
+  }
+}
+
+.Input-backgroundTransparent {
+  background-color: transparent;
+}
+
+.Input-backgroundSurfacePrimary {
+  --x-pp-default-color-accent: var(--x-pp-color-surface-secondary-accent);
+  background-color: var(--x-pp-color-surface-primary);
+}
+
+.Input-backgroundSurfaceSecondary {
+  --x-pp-default-color-accent: var(--x-pp-color-surface-secondary-accent);
+  background-color: var(--x-pp-color-surface-secondary);
+}
+
+.Input-backgroundSurfaceTertiary {
+  --x-pp-default-color-accent: var(--x-pp-color-surface-tertiary-accent);
+  background-color: var(--x-pp-color-surface-tertiary);
+}
+
+.Input-borderColorEmphasized {
+  --input-border-color: var(--x-pp-default-color-border-emphasized);
+}
+
+.Input-isDisabled {
+  opacity: 0.7;
+  cursor: default;
+
+  &::before {
+    display: none;
+  }
+
+  &.Input-backgroundSurfacePrimary {
+    background-color: var(--x-pp-color-surface-primary-disabled);
+  }
+
+  &.Input-backgroundSurfaceSecondary {
+    background-color: var(--x-pp-color-surface-secondary-disabled);
+  }
+
+  &.Input-backgroundSurfaceTertiary {
+    background-color: var(--x-pp-color-surface-tertiary-disabled);
+  }
+}
+
+.Label {
+  display: block;
+  max-width: 100%;
+  cursor: pointer;
+  grid-area: label;
+}
+
+.Label-isDisabled {
+  cursor: default;
+}
+
+.Error {
+  grid-area: error;
+}
+
+.Icon {
+  color: var(--x-pp-color-interactive-icon);
+  pointer-events: none;
+  opacity: 0;
+  transform-origin: center;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: calc(50% + 1px);
+  left: calc(50% + 1px);
+  transition: all var(--x-pp-duration-base) var(--x-pp-timing-base) 100ms;
+}

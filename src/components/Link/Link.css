@@ -1,0 +1,49 @@
+.Link {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  text-decoration: none;
+  background-color: var(--x-pp-color-interactive);
+  color: var(--x-pp-color-interactive-text);
+  transition: color var(--x-pp-link-transition-duration) var(--x-pp-timing-base),
+    background-color var(--x-pp-link-transition-duration)
+      var(--x-pp-timing-base);
+
+  &:hover {
+    --this-background-color: var(--x-pp-color-interactive-hovered);
+    --this-color: var(--x-pp-color-interactive-text-hovered);
+    background-color: var(--this-background-color);
+    color: var(--this-color);
+  }
+
+  &:active {
+    --this-background-color: var(--x-pp-color-interactive-pressed);
+    --this-color: var(--x-pp-color-interactive-text-pressed);
+    background-color: var(--this-background-color);
+    color: var(--this-color);
+  }
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.colorHoveredColor1:hover {
+  background-color: var(--x-pp-color1, var(--this-background-color));
+  color: var(--x-pp-color1-text, var(--this-color));
+}
+
+.colorHoveredColor2:hover {
+  background-color: var(--x-pp-color2, var(--this-background-color));
+  color: var(--x-pp-color2-text, var(--this-color));
+}
+
+/* Order does matter. :active pseudo-selector need to come after :hover */
+.colorPressedColor1:active {
+  background-color: var(--x-pp-color1, var(--this-background-color));
+  color: var(--x-pp-color1-text, var(--this-color));
+}
+
+.colorPressedColor2:active {
+  background-color: var(--x-pp-color2, var(--this-background-color));
+  color: var(--x-pp-color2-text, var(--this-color));
+}

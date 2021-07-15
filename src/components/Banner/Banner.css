@@ -1,0 +1,97 @@
+.Banner {
+  position: relative;
+  border-radius: var(
+    --x-pp-banner-border-radius,
+    var(--x-pp-global-border-radius)
+  );
+  border-width: var(--x-pp-banner-border, var(--x-pp-border-full));
+  border-style: solid;
+  padding: var(--x-pp-spacing-loose);
+}
+
+.Icon {
+  margin: em(-3.5px) 0;
+  max-width: em(24px);
+  max-height: em(24px);
+}
+
+.statusInfo {
+  --x-pp-default-color-border: var(--x-pp-color-info-border);
+  --x-pp-default-color-border-emphasized: var(
+    --x-pp-color-info-border-emphasized
+  );
+  --x-pp-default-color-text: var(--x-pp-color-info-text);
+  --x-pp-default-color-text-subdued: var(--x-pp-color-info-text-subdued);
+  --x-pp-default-color-text-emphasized: var(--x-pp-color-info-text-emphasized);
+  color: var(--x-pp-color-info-text);
+  background-color: var(--x-pp-color-info);
+  border-color: var(--x-pp-color-info-border);
+
+  & .Icon {
+    color: var(--x-pp-color-info-accent);
+  }
+}
+
+.statusSuccess {
+  --x-pp-default-color-border: var(--x-pp-color-success-border);
+  --x-pp-default-color-border-emphasized: var(
+    --x-pp-color-success-border-emphasized
+  );
+  --x-pp-default-color-text: var(--x-pp-color-success-text);
+  --x-pp-default-color-text-subdued: var(--x-pp-color-success-text-subdued);
+  --x-pp-default-color-text-emphasized: var(
+    --x-pp-color-success-text-emphasized
+  );
+  color: var(--x-pp-color-success-text);
+  background-color: var(--x-pp-color-success);
+  border-color: var(--x-pp-color-success-border);
+
+  & .Icon {
+    color: var(--x-pp-color-success-accent);
+  }
+}
+
+.statusWarning {
+  --x-pp-default-color-border: var(--x-pp-color-warning-border);
+  --x-pp-default-color-border-emphasized: var(
+    --x-pp-color-warning-border-emphasized
+  );
+  --x-pp-default-color-text: var(--x-pp-color-warning-text);
+  --x-pp-default-color-text-subdued: var(--x-pp-color-warning-text-subdued);
+  --x-pp-default-color-text-emphasized: var(
+    --x-pp-color-warning-text-emphasized
+  );
+  color: var(--x-pp-color-warning-text);
+  background-color: var(--x-pp-color-warning);
+  border-color: var(--x-pp-color-warning-border);
+
+  & .Icon {
+    color: var(--x-pp-color-warning-accent);
+  }
+}
+
+.statusCritical {
+  --x-pp-default-color-border: var(--x-pp-color-critical-border);
+  --x-pp-default-color-border-emphasized: var(
+    --x-pp-color-critical-border-emphasized
+  );
+  --x-pp-default-color-text: var(--x-pp-color-critical-text);
+  --x-pp-default-color-text-subdued: var(--x-pp-color-critical-text-subdued);
+  --x-pp-default-color-text-emphasized: var(
+    --x-pp-color-critical-text-emphasized
+  );
+  color: var(--x-pp-color-critical-text);
+  background-color: var(--x-pp-color-critical);
+  border-color: var(--x-pp-color-critical-border);
+
+  & .Icon {
+    color: var(--x-pp-color-critical-accent);
+  }
+}
+
+.Button {
+  -webkit-tap-highlight-color: transparent;
+  padding: var(--x-pp-spacing-tight);
+  margin: calc(-1 * var(--x-pp-spacing-tight));
+  color: var(--banner-icon-color);
+}

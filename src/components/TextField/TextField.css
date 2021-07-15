@@ -1,0 +1,262 @@
+.Wrapper {
+  position: relative;
+}
+
+.Field {
+  -webkit-tap-highlight-color: transparent;
+  border: 0 transparent solid;
+  border-radius: var(
+    --x-pp-text-field-border-radius,
+    var(--x-pp-control-border-radius, var(--x-pp-global-border-radius))
+  );
+  font-size: var(--x-pp-typography-size-default);
+  outline: none;
+  padding-inline: em(12px);
+  min-height: em(47px);
+  transition: box-shadow var(--x-pp-duration-base) var(--x-pp-timing-base),
+    border var(--x-pp-duration-base) var(--x-pp-timing-base);
+  text-transform: var(--x-pp-global-typography-letter-case);
+  letter-spacing: var(--x-pp-global-typography-kerning);
+  width: 100%;
+
+  &::placeholder {
+    color: var(--placeholder-color);
+    opacity: 1;
+  }
+
+  &:invalid {
+    box-shadow: none;
+  }
+}
+
+.Field-isFloating {
+  transition: all var(--x-pp-duration-base) var(--x-pp-timing-base);
+  padding-top: em(14px);
+}
+
+.Field-hasTooltip {
+  padding-inline-end: em(
+    44px
+  ); /* calc(em(26px) + em(18px)); 18px being the icon size and 26px the space around  */
+}
+
+.Field-backgroundTransparent {
+  --placeholder-color: var(--x-pp-default-color-text-subdued);
+  background-color: transparent;
+}
+
+.Field-backgroundSurfacePrimary {
+  --placeholder-color: var(--x-pp-color-surface-primary-text-subdued);
+  --x-pp-default-color-text-subdued: var(
+    --x-pp-color-surface-primary-text-subdued
+  );
+  --x-pp-default-color-accent: var(--x-pp-color-surface-primary-accent);
+  color: var(--x-pp-color-surface-primary-text-emphasized);
+  background-color: var(--x-pp-color-surface-primary);
+
+  & + .Tooltip {
+    --x-pp-default-color-text-subdued: var(
+      --x-pp-color-surface-primary-text-subdued
+    );
+    --x-pp-default-color-accent: var(--x-pp-color-surface-secondary-accent);
+  }
+}
+
+.Field-backgroundSurfaceSecondary {
+  --placeholder-color: var(--x-pp-color-surface-secondary-text-subdued);
+  --x-pp-default-color-text-subdued: var(
+    --x-pp-color-surface-secondary-text-subdued
+  );
+  --x-pp-default-color-accent: var(--x-pp-color-surface-secondary-accent);
+  color: var(--x-pp-color-surface-secondary-text-emphasized);
+  background-color: var(--x-pp-color-surface-secondary);
+
+  & + .Tooltip {
+    --x-pp-default-color-text-subdued: var(
+      --x-pp-color-surface-secondary-text-subdued
+    );
+    --x-pp-default-color-accent: var(--x-pp-color-surface-secondary-accent);
+  }
+}
+
+.Field-backgroundSurfaceTertiary {
+  --placeholder-color: var(--x-pp-color-surface-tertiary-text-subdued);
+  --x-pp-default-color-text-subdued: var(
+    --x-pp-color-surface-tertiary-text-subdued
+  );
+  --x-pp-default-color-accent: var(--x-pp-color-surface-tertiary-accent);
+  color: var(--x-pp-color-surface-tertiary-text-emphasized);
+  background-color: var(--x-pp-color-surface-tertiary);
+
+  & + .Tooltip {
+    --x-pp-default-color-text-subdued: var(
+      --x-pp-color-surface-tertiary-text-subdued
+    );
+    --x-pp-default-color-accent: var(--x-pp-color-surface-tertiary-accent);
+  }
+}
+
+.Field-borderNone {
+  &.Field-focusBorderFull {
+    &:focus {
+      box-shadow: 0 0 0 2px var(--x-pp-color-interactive-text);
+    }
+
+    /* stylelint-disable selector-max-class, selector-max-specificity */
+    &.hasError {
+      &,
+      &:focus {
+        box-shadow: 0 0 0 2px var(--x-pp-color-critical-accent);
+      }
+    }
+    /* stylelint-enable selector-max-class, selector-max-specificity */
+  }
+
+  &.Field-focusBorderBlockEnd {
+    &:focus {
+      box-shadow: 0 2px 0 0 var(--x-pp-color-interactive-text);
+    }
+
+    /* stylelint-disable selector-max-class, selector-max-specificity */
+    &.hasError {
+      &,
+      &:focus {
+        box-shadow: 0 2px 0 0 var(--x-pp-color-critical-accent);
+      }
+    }
+    /* stylelint-enable selector-max-class, selector-max-specificity */
+  }
+}
+
+.Field-borderFull {
+  border-width: 1px;
+  border-color: var(--x-pp-default-color-border);
+  padding-inline-start: em(11px);
+
+  &.Field-focusBorderFull {
+    &:focus {
+      border-color: var(--x-pp-color-interactive-text);
+      box-shadow: 0 0 0 1px var(--x-pp-color-interactive-text);
+    }
+
+    /* stylelint-disable selector-max-class, selector-max-specificity */
+    &.hasError {
+      &,
+      &:focus {
+        border-color: var(--x-pp-color-critical-accent);
+        box-shadow: 0 0 0 1px var(--x-pp-color-critical-accent);
+      }
+    }
+    /* stylelint-enable selector-max-class, selector-max-specificity */
+  }
+
+  &.Field-focusBorderBlockEnd {
+    &:focus {
+      border-bottom-color: var(--x-pp-color-interactive-text);
+      box-shadow: 0 1px 0 0 var(--x-pp-color-interactive-text);
+    }
+
+    /* stylelint-disable selector-max-class, selector-max-specificity */
+    &.hasError {
+      &,
+      &:focus {
+        border-bottom-color: var(--x-pp-color-critical-accent);
+        box-shadow: 0 1px 0 0 var(--x-pp-color-critical-accent);
+      }
+    }
+    /* stylelint-enable selector-max-class, selector-max-specificity */
+  }
+}
+
+.Field-borderBlockEnd {
+  border-width: 0 0 1px;
+  border-color: var(--x-pp-default-color-border);
+
+  &.Field-focusBorderFull {
+    &:focus {
+      border-color: var(--x-pp-color-interactive-text);
+      box-shadow: 1px 0 0 1px var(--x-pp-color-interactive-text),
+        -1px 0 0 1px var(--x-pp-color-interactive-text),
+        1px -1px 0 1px var(--x-pp-color-interactive-text),
+        -1px -1px 0 1px var(--x-pp-color-interactive-text);
+    }
+
+    /* stylelint-disable selector-max-class, selector-max-specificity */
+    &.hasError {
+      &,
+      &:focus {
+        border-color: var(--x-pp-color-critical-accent);
+        box-shadow: 1px 0 0 1px var(--x-pp-color-critical-accent),
+          -1px 0 0 1px var(--x-pp-color-critical-accent),
+          1px -1px 0 1px var(--x-pp-color-critical-accent),
+          -1px -1px 0 1px var(--x-pp-color-critical-accent);
+      }
+    }
+    /* stylelint-enable selector-max-class, selector-max-specificity */
+  }
+
+  &.Field-focusBorderBlockEnd {
+    &:focus {
+      border-color: var(--x-pp-color-interactive-text);
+      box-shadow: 0 1px 0 0 var(--x-pp-color-interactive-text);
+    }
+
+    /* stylelint-disable selector-max-class, selector-max-specificity */
+    &.hasError {
+      &,
+      &:focus {
+        border-color: var(--x-pp-color-critical-accent);
+        box-shadow: 0 1px 0 0 var(--x-pp-color-critical-accent);
+      }
+    }
+    /* stylelint-enable selector-max-class, selector-max-specificity */
+  }
+}
+
+.Field-borderColorEmphasized {
+  border-color: var(--x-pp-default-color-border-emphasized);
+}
+
+.Tooltip {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-end: var(--x-pp-spacing-base);
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.Error-errorIndentationToText {
+  padding: 0 em(12px);
+}
+
+.Field-isDisabled {
+  opacity: 0.7;
+
+  &.Field-backgroundSurfacePrimary {
+    background-color: var(--x-pp-color-surface-primary-disabled);
+  }
+
+  &.Field-backgroundSurfaceSecondary {
+    background-color: var(--x-pp-color-surface-secondary-disabled);
+  }
+
+  &.Field-backgroundSurfaceTertiary {
+    background-color: var(--x-pp-color-surface-tertiary-disabled);
+  }
+}
+
+.Field-isReadOnly {
+  opacity: 0.7;
+
+  &.Field-backgroundSurfacePrimary {
+    background-color: var(--x-pp-color-surface-primary-disabled);
+  }
+
+  &.Field-backgroundSurfaceSecondary {
+    background-color: var(--x-pp-color-surface-secondary-disabled);
+  }
+
+  &.Field-backgroundSurfaceTertiary {
+    background-color: var(--x-pp-color-surface-tertiary-disabled);
+  }
+}
