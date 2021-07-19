@@ -1,5 +1,2 @@
-export {
-  VisuallyHidden,
-  MaybeVisuallyHidden,
-  MaybeProps,
-} from './VisuallyHidden';
+export {VisuallyHidden, MaybeVisuallyHidden} from './VisuallyHidden';
+export type {MaybeProps} from './VisuallyHidden';

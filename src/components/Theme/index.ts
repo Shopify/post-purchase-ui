@@ -1,4 +1,5 @@
-export {Theme, Props} from './Theme';
+export {Theme} from './Theme';
+export type {Props} from './Theme';
 export {
   UiTheme,
   ThemeContext,
@@ -7,8 +8,8 @@ export {
   colorTextSubdued,
 } from './context';
 export {useTheme, useThemeConfiguration} from './hooks';
-export {HslColorTuple} from '../../utilities/hsluv';
-export {
+export type {HslColorTuple} from '../../utilities/hsluv';
+export type {
   ThemeConfiguration,
   ThemeOptions,
   ThemeSimpleBorderRadius,

@@ -1,9 +1,7 @@
 export {
   AppContext,
-  Props,
-  TranslationKey,
   useAppContext,
   useTranslate,
   useLinkComponent,
-  LinkLikeComponentProps,
 } from './AppContext';
+export type {Props, TranslationKey, LinkLikeComponentProps} from './AppContext';

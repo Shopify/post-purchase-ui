@@ -1,1 +1,2 @@
-export {UnstyledLink, Props} from './UnstyledLink';
+export {UnstyledLink} from './UnstyledLink';
+export type {Props} from './UnstyledLink';

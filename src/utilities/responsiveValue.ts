@@ -1,11 +1,7 @@
 import {CSSProperties} from 'react';
-// TODO: Fix import once package is published
-// import {Breakpoint, Responsive} from '@shopify/checkout-ui-extensions';
+import {Breakpoint, Responsive} from '@shopify/checkout-ui-extensions';
 
 import {BREAKPOINTS, useBreakpoint} from './breakpoint';
-
-type Breakpoint = 'base' | 'small' | 'medium' | 'large';
-type Responsive<T> = {[key in Breakpoint]?: T};
 
 export function useResponsiveValue<T = any>(
   values: Partial<Record<Breakpoint, T>>,

@@ -1,1 +1,2 @@
-export {InlineError, Props} from './InlineError';
+export {InlineError} from './InlineError';
+export type {Props} from './InlineError';

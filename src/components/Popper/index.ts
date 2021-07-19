@@ -1,3 +1,4 @@
-export {Popper, Props} from './Popper';
+export {Popper} from './Popper';
+export type {Props} from './Popper';
 export {usePopper} from './hooks';
-export {Placement} from './utilities/offsets';
+export type {Placement} from './utilities/offsets';

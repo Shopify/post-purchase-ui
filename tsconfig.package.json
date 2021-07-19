@@ -4,6 +4,7 @@
     "baseUrl": "src",
     "rootDir": "src",
     "outDir": "build/ts",
+    "isolatedModules": true,
     "types": [
       "jest",
       "@quilted/react-testing/matchers",

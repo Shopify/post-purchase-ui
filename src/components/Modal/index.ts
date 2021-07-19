@@ -1,1 +1,2 @@
-export {Modal, Props} from './Modal';
+export {Modal} from './Modal';
+export type {Props} from './Modal';

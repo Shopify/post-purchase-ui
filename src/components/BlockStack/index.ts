@@ -1,1 +1,2 @@
-export {BlockStack, Props} from './BlockStack';
+export {BlockStack} from './BlockStack';
+export type {Props} from './BlockStack';
