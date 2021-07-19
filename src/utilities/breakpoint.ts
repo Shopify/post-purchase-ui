@@ -1,5 +1,5 @@
 import {useEffect, useMemo, useCallback, useState} from 'react';
-import {Breakpoint} from '@shopify/checkout-ui-extensions';
+import {Breakpoint} from '@shopify/post-purchase-ui-extensions';
 
 export interface Media {
   breakpoint: Breakpoint;

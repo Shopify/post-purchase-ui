@@ -1,5 +1,5 @@
 import {CSSProperties} from 'react';
-import {Breakpoint, Responsive} from '@shopify/checkout-ui-extensions';
+import {Breakpoint, Responsive} from '@shopify/post-purchase-ui-extensions';
 
 import {BREAKPOINTS, useBreakpoint} from './breakpoint';
 
