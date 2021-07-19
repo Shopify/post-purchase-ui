@@ -4,3 +4,4 @@ node_modules
 /index.*
 /ui-extensions.*
 /webpack.*
+.DS_STORE

@@ -91,7 +91,6 @@ module.exports = {
     '*.html',
     '*.graphql.d.ts',
     'app/graphql/*types/*',
-    '!.storybook',
   ],
   env: {
     node: true,
