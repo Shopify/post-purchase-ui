@@ -1,4 +1,3 @@
-/* eslint-disable react/no-array-index-key, react/prop-types, @shopify/jsx-no-hardcoded-content */
 import React from 'react';
 import {render} from 'react-dom';
 import {Context} from '@shopify/post-purchase-ui-react/ui-extensions';

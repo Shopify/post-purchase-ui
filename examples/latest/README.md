@@ -20,6 +20,7 @@ yarn build
 
 ```sh
 cd examples/latest
+yarn
 yarn start
 ```
 

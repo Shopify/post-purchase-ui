@@ -77,6 +77,7 @@ module.exports = {
     },
   ],
   ignorePatterns: [
+    'examples',
     'node_modules',
     '**/node_modules/*',
     '**/__generated__/*',
