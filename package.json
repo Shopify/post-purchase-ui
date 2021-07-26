@@ -1,6 +1,6 @@
 {
   "name": "@shopify/post-purchase-ui-react",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "Post-purchase UI library",
   "publishConfig": {
     "access": "public",
