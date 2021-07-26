@@ -1,0 +1,7 @@
+build
+node_modules
+.sewing-kit
+/index.*
+/ui-extensions.*
+/webpack.*
+.DS_STORE

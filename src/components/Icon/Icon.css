@@ -1,0 +1,65 @@
+.Icon {
+  display: block;
+  max-height: 100%;
+  max-width: 100%;
+  fill: currentColor;
+}
+
+.sizeDefault {
+  width: var(--x-pp-icon-size-default);
+  height: var(--x-pp-icon-size-default);
+}
+
+.sizeSmall {
+  width: var(--x-pp-icon-size-small);
+  height: var(--x-pp-icon-size-small);
+}
+
+.sizeLarge {
+  width: var(--x-pp-icon-size-large);
+  height: var(--x-pp-icon-size-large);
+}
+
+.appearanceAccent {
+  color: var(--x-pp-default-color-accent);
+}
+
+.appearanceInteractive {
+  color: var(--x-pp-color-interactive-text);
+}
+
+.appearanceSubdued {
+  color: var(
+    --x-pp-default-color-text-subdued,
+    var(--x-pp-default-color-text, inherit)
+  );
+}
+
+.appearanceInfo {
+  color: var(--x-pp-color-info-accent);
+}
+
+.appearanceSuccess {
+  color: var(--x-pp-color-success-accent);
+}
+
+.appearanceCritical {
+  color: var(--x-pp-color-critical-accent);
+}
+
+.appearanceWarning {
+  color: var(--x-pp-color-warning-accent);
+}
+
+.Svg,
+.Img {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.Placeholder {
+  padding-bottom: 100%;
+}

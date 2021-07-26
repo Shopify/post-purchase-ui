@@ -1,0 +1,67 @@
+.Text {
+  font-size: var(--x-pp-typography-size-default);
+  text-transform: var(--x-pp-global-typography-letter-case);
+  letter-spacing: var(--x-pp-global-typography-kerning);
+}
+
+.subdued {
+  color: var(
+    --x-pp-default-color-text-subdued,
+    var(--x-pp-default-color-text, inherit)
+  );
+}
+
+.emphasized {
+  --this-font-weight: var(--x-pp-typography-primary-weight-bold);
+  font-weight: var(--this-font-weight);
+  color: var(
+    --x-pp-default-color-text-emphasized,
+    var(--x-pp-default-color-text, inherit)
+  );
+}
+
+.appearanceAccent {
+  color: var(--x-pp-default-color-accent);
+}
+
+.appearanceSuccess {
+  color: var(--x-pp-color-success-accent);
+}
+
+.appearanceWarning {
+  color: var(--x-pp-color-warning-accent);
+}
+
+.appearanceCritical {
+  color: var(--x-pp-color-critical-accent);
+}
+
+.sizeXsmall {
+  --this-font-size: var(--x-pp-typography-size-xsmall);
+  font-size: var(--this-font-size);
+}
+
+.sizeSmall {
+  --this-font-size: var(--x-pp-typography-size-small);
+  font-size: var(--this-font-size);
+}
+
+.sizeMedium {
+  --this-font-size: var(--x-pp-typography-size-medium);
+  font-size: var(--this-font-size);
+}
+
+.sizeLarge {
+  --this-font-size: var(--x-pp-typography-size-large);
+  font-size: var(--this-font-size);
+}
+
+.sizeXlarge {
+  --this-font-size: var(--x-pp-typography-size-xlarge);
+  font-size: var(--this-font-size);
+}
+
+.Abbr {
+  font-variant: none;
+  text-decoration: none;
+}

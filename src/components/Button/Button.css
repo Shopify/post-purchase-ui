@@ -1,0 +1,345 @@
+.Button {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  position: relative;
+  cursor: pointer;
+  background-color: var(--x-pp-color-primary-action);
+  border-radius: var(
+    --x-pp-control-border-radius,
+    var(--x-pp-global-border-radius)
+  );
+  color: var(--x-pp-color-primary-action-text);
+  display: inline-block;
+  font-weight: var(--x-pp-typography-primary-weight-bold);
+  padding: var(--x-pp-primary-button-block-padding)
+    var(--x-pp-primary-button-inline-padding);
+  text-align: center;
+  text-decoration: none;
+  text-transform: var(--x-pp-global-typography-letter-case);
+  transition: background-color var(--x-pp-duration-base) var(--x-pp-timing-base),
+    color var(--x-pp-duration-base) var(--x-pp-timing-base);
+
+  &:hover {
+    background-color: var(--x-pp-color-primary-action-hovered);
+  }
+
+  &:active {
+    background-color: var(--x-pp-color-primary-action-pressed);
+    outline: none;
+  }
+
+  @media (-ms-high-contrast: active) {
+    border: 1px solid transparent;
+  }
+}
+
+.Content {
+  --this-line-height: 1.5rem;
+  display: block;
+  line-height: var(--this-line-height);
+}
+
+.Content,
+.LoadingContent {
+  transition: opacity var(--x-pp-duration-slow) var(--x-pp-timing-base);
+}
+
+.Spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.subdued,
+.plain {
+  background-color: transparent;
+  color: var(--x-pp-color-primary-action);
+
+  &:hover {
+    background-color: transparent;
+    color: var(--x-pp-color-primary-action-hovered);
+  }
+
+  &:active {
+    background-color: transparent;
+    color: var(--x-pp-color-primary-action-pressed);
+  }
+}
+
+.plain {
+  font-weight: var(--x-pp-typography-primary-weight-base);
+  padding: 0;
+  border-radius: var(--x-pp-border-radius-none);
+  background-color: var(--x-pp-color-interactive);
+  color: var(--x-pp-color-interactive-text);
+  transition: background-color var(--x-pp-duration-base) var(--x-pp-timing-base),
+    color var(--x-pp-duration-base) var(--x-pp-timing-base);
+
+  &:hover {
+    --this-background-color: var(--x-pp-color-interactive-hovered);
+    --this-color: var(--x-pp-color-interactive-text-hovered);
+    background-color: var(--this-background-color);
+    color: var(--this-color);
+  }
+
+  &:active {
+    --this-background-color: var(--x-pp-color-interactive-pressed);
+    --this-color: var(--x-pp-color-interactive-text-pressed);
+    background-color: var(--this-background-color);
+    color: var(--this-color);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: em(-5px);
+    z-index: 0;
+
+    @media (any-hover: none) {
+      inset: em(-20px) em(-24px);
+    }
+  }
+
+  & .Content {
+    z-index: 1;
+    position: relative;
+  }
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.fill {
+  display: flex;
+  justify-content: center;
+  min-width: 100%;
+
+  &.plain {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.subdued {
+  box-shadow: inset 0 0 0 1px var(--x-pp-default-color-border);
+}
+
+.disabled,
+.loading {
+  pointer-events: none;
+  cursor: default;
+}
+
+.disabled {
+  /* TODO */
+  background-color: hsl(0, 0%, 85%);
+  color: hsl(0, 0%, 100%);
+}
+
+.loading-transitionEnter {
+  & .LoadingContent {
+    opacity: 0;
+  }
+
+  & .Content {
+    @media screen and (prefers-reduced-motion: reduce) {
+      display: none;
+    }
+  }
+}
+
+.loading-transitionEntering,
+.loading-transitionEntered {
+  & .LoadingContent {
+    opacity: 1;
+  }
+
+  & .Content {
+    opacity: 0;
+
+    @media screen and (prefers-reduced-motion: reduce) {
+      display: none;
+    }
+  }
+}
+
+.secondary {
+  background-color: var(--x-pp-color-secondary-action);
+  color: var(--x-pp-color-secondary-action-text);
+  padding: var(--x-pp-secondary-button-block-padding)
+    var(--x-pp-secondary-button-inline-padding);
+
+  &:hover {
+    background-color: var(--x-pp-color-secondary-action-hovered);
+  }
+
+  &:active {
+    background-color: var(--x-pp-color-secondary-action-pressed);
+    outline: none;
+  }
+}
+
+.tertiary {
+  background-color: var(--x-pp-color-tertiary-action);
+  color: var(--x-pp-color-tertiary-action-text);
+  padding: var(--x-pp-tertiary-button-block-padding)
+    var(--x-pp-tertiary-button-inline-padding);
+}
+
+.connected {
+  padding-block-end: 0;
+  padding-block-start: 0;
+  height: em(47px);
+}
+
+.progressBar {
+  pointer-events: none;
+  cursor: default;
+  background-color: var(--x-pp-color-primary-action-pressed);
+  position: relative;
+  overflow: hidden;
+
+  & .Content {
+    position: relative;
+    z-index: 1;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    background-color: var(--x-pp-color-primary-action);
+    z-index: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation-name: progressbar;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    animation-delay: var(--x-pp-duration-base);
+  }
+
+  &.secondary {
+    background-color: var(--x-pp-color-secondary-action-pressed);
+
+    &::before {
+      background-color: var(--x-pp-color-secondary-action);
+    }
+  }
+
+  &.disabled {
+    background-color: hsl(0, 0%, 85%);
+
+    &::before {
+      background-color: hsl(0, 0%, 75%);
+    }
+  }
+
+  &.subdued,
+  &.plain {
+    background-color: transparent;
+
+    &::before {
+      background-color: var(--x-pp-color-primary-action);
+      top: calc(100% - rem(2px));
+    }
+  }
+
+  @media screen and (prefers-reduced-motion: reduce) {
+    &::before {
+      animation: none;
+    }
+  }
+}
+
+@keyframes progressbar {
+  0% {
+    transform: scaleX(0);
+  }
+  5% {
+    transform: scaleX(0.2);
+  }
+  10% {
+    transform: scaleX(0.25);
+  }
+  15% {
+    transform: scaleX(0.3);
+  }
+  20% {
+    transform: scaleX(0.35);
+  }
+  25% {
+    transform: scaleX(0.45);
+  }
+  30% {
+    transform: scaleX(0.5);
+  }
+  35% {
+    transform: scaleX(0.55);
+  }
+  40% {
+    transform: scaleX(0.6);
+  }
+  45% {
+    transform: scaleX(0.7);
+  }
+  50% {
+    transform: scaleX(0.8);
+  }
+  55% {
+    transform: scaleX(0.82);
+  }
+  60% {
+    transform: scaleX(0.84);
+  }
+  65% {
+    transform: scaleX(0.86);
+  }
+  70% {
+    transform: scaleX(0.88);
+  }
+  75% {
+    transform: scaleX(0.9);
+  }
+  80% {
+    transform: scaleX(0.92);
+  }
+  85% {
+    transform: scaleX(0.94);
+  }
+  90% {
+    transform: scaleX(0.96);
+  }
+  95% {
+    transform: scaleX(0.98);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.colorHoveredColor1:hover {
+  background-color: var(--x-pp-color1, var(--this-background-color));
+  color: var(--x-pp-color1-text, var(--this-color));
+}
+
+.colorHoveredColor2:hover {
+  background-color: var(--x-pp-color2, var(--this-background-color));
+  color: var(--x-pp-color2-text, var(--this-color));
+}
+
+/* Order does matter. :active pseudo-selector need to come after :hover */
+.colorPressedColor1:active {
+  background-color: var(--x-pp-color1, var(--this-background-color));
+  color: var(--x-pp-color1-text, var(--this-color));
+}
+
+.colorPressedColor2:active {
+  background-color: var(--x-pp-color2, var(--this-background-color));
+  color: var(--x-pp-color2-text, var(--this-color));
+}

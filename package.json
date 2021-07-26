@@ -1,0 +1,99 @@
+{
+  "name": "@shopify/post-purchase-ui-react",
+  "version": "0.6.0",
+  "description": "Post-purchase UI library",
+  "publishConfig": {
+    "access": "public",
+    "@shopify:registry": "https://registry.npmjs.org"
+  },
+  "repository": "https://github.com/Shopify/post-purchase-ui",
+  "bugs": {
+    "url": "https://github.com/Shopify/post-purchase-ui/issues"
+  },
+  "author": "Shopify <dev@shopify.com>",
+  "license": "MIT",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "main": "index.js",
+  "module": "index.mjs",
+  "esnext": "index.esnext",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "esnext": "./index.esnext"
+    },
+    "./": "./",
+    "./ui-extensions": {
+      "import": "./ui-extensions.mjs",
+      "require": "./ui-extensions.js",
+      "esnext": "./ui-extensions.esnext"
+    },
+    "./webpack": {
+      "import": "./webpack.mjs",
+      "require": "./webpack.js",
+      "esnext": "./webpack.esnext"
+    }
+  },
+  "files": [
+    "src",
+    "build",
+    "README.md",
+    "package.json",
+    "/index.*",
+    "/ui-extensions.*",
+    "/webpack.*"
+  ],
+  "scripts": {
+    "test": "sk test",
+    "lint": "sk lint",
+    "type-check": "sk type-check",
+    "build": "sk build"
+  },
+  "devDependencies": {
+    "@quilted/react-testing": "^0.1.4",
+    "@quilted/sewing-kit-plugins": "^0.1.26",
+    "@sewing-kit/cli": "^0.1.6",
+    "@shopify/eslint-plugin": "^37.0.1",
+    "@shopify/jest-dom-mocks": "^2.9.1",
+    "@types/css-font-loading-module": "0.0.4",
+    "@types/faker": "^4.1.12",
+    "@types/react": "^16.9.20",
+    "@types/react-dom": "^16.9.8",
+    "babel-jest": "^26.6.3",
+    "babel-loader": "^8.1.0",
+    "babel-preset-shopify": "^21.0.0",
+    "faker": "^4.1.0",
+    "preact": "^10.4.1",
+    "prettier": "^2.0.5",
+    "stylelint-config-shopify": "^7.4.0",
+    "stylelint-use-nesting": "^2.0.0"
+  },
+  "peerDependencies": {
+    "preact": "^10.4.1"
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.0.0",
+    "@shopify/checkout-ui-extensions": "^0.12.0",
+    "@shopify/css-utilities": "1.0.5",
+    "@shopify/post-purchase-ui-extensions": "^0.11.0",
+    "@shopify/webpack-ignore-typescript-export-warnings-plugin": "^1.0.4",
+    "@svgr/webpack": "^5.1.0",
+    "babel-loader": "^8.1.0",
+    "core-js": "^3.0.0",
+    "css-loader": "3.4.2",
+    "file-loader": "5.0.2",
+    "hsluv": "0.1.0",
+    "image-webpack-loader": "6.0.0",
+    "mini-css-extract-plugin": "0.9.0",
+    "postcss-functions": "^3.0.0",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "style-loader": "1.1.3"
+  },
+  "resolutions": {
+    "postcss-functions/postcss": "^7.0.0"
+  }
+}
