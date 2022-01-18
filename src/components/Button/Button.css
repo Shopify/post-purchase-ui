@@ -141,7 +141,7 @@
     margin: 0;
     padding: 0;
     background-color: transparent;
-    color: var(--x-default-color-text, inherit);
+    color: var(--x-pp-color-interactive-text);
     opacity: 0.5;
   }
 }
