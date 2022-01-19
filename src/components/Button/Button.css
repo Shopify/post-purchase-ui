@@ -136,6 +136,14 @@
   /* TODO */
   background-color: hsl(0, 0%, 85%);
   color: hsl(0, 0%, 100%);
+
+  &.plain {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    color: var(--x-pp-color-interactive-text);
+    opacity: 0.5;
+  }
 }
 
 .loading-transitionEnter {

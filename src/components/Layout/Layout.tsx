@@ -60,8 +60,8 @@ export function Layout({
 
   return (
     <>
-      <style>{layoutStyles}</style>
       <div className={layoutClassName}>
+        <style>{layoutStyles}</style>
         <div className={layoutInnerClassName}>{children}</div>
       </div>
     </>
@@ -78,6 +78,7 @@ function generateSizesStyles(selector: string, sizes: Size[]) {
 
     const inlineStyles = `
         ${selector} > :nth-child(${index + 1}) {
+          display: ${basicSize === 0 ? 'none' : 'unset'};
           flex: ${canGrow ? '1' : '0'} ${canShrink ? '1' : '0'} ${size};
           max-width: ${size};
         }
