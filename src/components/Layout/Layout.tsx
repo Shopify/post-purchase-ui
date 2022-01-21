@@ -78,7 +78,6 @@ function generateSizesStyles(selector: string, sizes: Size[]) {
 
     const inlineStyles = `
         ${selector} > :nth-child(${index + 1}) {
-          display: ${basicSize === 0 ? 'none' : 'unset'};
           flex: ${canGrow ? '1' : '0'} ${canShrink ? '1' : '0'} ${size};
           max-width: ${size};
         }
